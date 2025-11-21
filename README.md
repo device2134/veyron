@@ -1,89 +1,93 @@
 # Veyron Wiki - Rage Multiplayer RPG
 
-Wiki-ul oficial pentru serverul Rage Multiplayer RPG Veyron.
+Official wiki for the Veyron Rage Multiplayer RPG server.
 
-## Tehnologii
+## Technologies
 
-- **Next.js 14** - Framework React pentru aplicații web
-- **React 18** - Biblioteca UI
-- **TypeScript** - Tipare statice pentru JavaScript
-- **Tailwind CSS** - Framework CSS utility-first
-- **Lucide React** - Iconițe moderne
+- **Next.js 14** - React framework for web applications
+- **React 18** - UI library
+- **TypeScript** - Static typing for JavaScript
+- **Tailwind CSS** - Utility-first CSS framework
+- **Lucide React** - Modern icons
 
-## Instalare Locală
+## Local Installation
 
-1. Instalează dependențele:
+1. Install dependencies:
 ```bash
 npm install
 ```
 
-2. Rulează serverul de dezvoltare:
+2. Run the development server:
 ```bash
 npm run dev
 ```
 
-3. Deschide [http://localhost:3000](http://localhost:3000) în browser.
+3. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-## Structura Proiectului
+## Project Structure
 
-- `/app` - Pagini și layout-uri Next.js
-- `/components` - Componente React reutilizabile
+- `/app` - Next.js pages and layouts
+- `/components` - Reusable React components
 - `/contexts` - Context providers (Language)
-- `/app/globals.css` - Stiluri globale și configurație Tailwind
+- `/app/globals.css` - Global styles and Tailwind configuration
 
-## Categorii Wiki
+## Wiki Categories
 
-- **Factiuni** - Informații despre factiunile disponibile (Poliție, Pașnice, Mafii)
-- **Case** - Ghid pentru cumpărarea și gestionarea caselor
-- **Apartamente** - Informații despre apartamente
-- **Vehicule Personale** - Ghid pentru vehicule
-- **Cont** - Gestionarea contului
-- **Progres** - Sistemul de progres și skill-uri
-- **Level** - Sistemul de level și XP
+- **Factions** - Information about available factions (Police, Peaceful, Mafias)
+- **Houses** - Guide for buying and managing houses
+- **Apartments** - Information about apartments
+- **Personal Vehicles** - Vehicle guide
+- **Account** - Account management
+- **Progress** - Progress and skills system
+- **Level** - Level and XP system
 
-## Deploy pe Vercel
+## Deploy to Vercel
 
-### Pasul 1: Push pe GitHub
+### Step 1: Push to GitHub
 
-1. Creează un repository nou pe GitHub
-2. Adaugă remote-ul:
+1. Create a new repository on GitHub
+2. Add the remote:
 ```bash
-git remote add origin https://github.com/TU_USERNAME/veyron-wiki.git
+git remote add origin https://github.com/YOUR_USERNAME/veyron-wiki.git
 git branch -M main
 git push -u origin main
 ```
 
-### Pasul 2: Deploy pe Vercel
+### Step 2: Deploy to Vercel
 
-1. Mergi pe [vercel.com](https://vercel.com) și loghează-te
-2. Click pe "Add New Project"
-3. Importă repository-ul de pe GitHub
-4. Vercel va detecta automat Next.js și va configura build-ul
-5. Click pe "Deploy"
-6. Site-ul va fi live în câteva minute!
+1. Go to [vercel.com](https://vercel.com) and log in
+2. Click "Add New Project"
+3. Import the repository from GitHub
+4. Vercel will automatically detect Next.js and configure the build
+5. Click "Deploy"
+6. Your site will be live in a few minutes!
 
-### Configurare Vercel (Automată)
+### Vercel Configuration (Automatic)
 
-Vercel detectează automat:
+Vercel automatically detects:
 - **Framework Preset**: Next.js
 - **Build Command**: `npm run build`
 - **Output Directory**: `.next`
 - **Install Command**: `npm install`
 
-Nu este nevoie de configurație suplimentară!
+No additional configuration needed!
 
-## Build pentru Producție
+## Production Build
 
 ```bash
 npm run build
 npm start
 ```
 
-## Caracteristici
+## Features
 
-- 🌍 **Multi-limbă**: Suport pentru Română și Engleză
-- 🎨 **Design Modern**: Inspirat din Discord și GTA
-- 📱 **Responsive**: Funcționează perfect pe toate dispozitivele
-- ⚡ **Performant**: Optimizat cu Next.js 14
-- 🎭 **Animații**: Loading screen și tranziții fluide
+- 🌍 **Multi-language**: Support for Romanian and English
+- 🎨 **Modern Design**: Inspired by Discord and GTA
+- 📱 **Responsive**: Works perfectly on all devices
+- ⚡ **Performant**: Optimized with Next.js 14
+- 🎭 **Animations**: Loading screen and smooth transitions
+
+---
+
+**Created by Device**
 

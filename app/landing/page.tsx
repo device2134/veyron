@@ -22,7 +22,7 @@ export default function LandingPage() {
     if (language !== "en") {
       setLanguage("en");
     }
-  }, [language, setLanguage]);
+  }, []);
 
   return (
     <div className="min-h-screen relative overflow-hidden bg-[#1a1a1a]">

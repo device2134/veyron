@@ -29,9 +29,9 @@ const nextConfig = {
   swcMinify: true,
   
   // Enable experimental features for better performance
-  experimental: {
-    optimizeCss: true,
-  },
+  // experimental: {
+  //   optimizeCss: true, // Disabled - requires critters package
+  // },
   
   // Headers for better caching
   async headers() {

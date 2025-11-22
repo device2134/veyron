@@ -1,6 +1,6 @@
 "use client";
 
-import { createContext, useContext, useState, ReactNode } from "react";
+import { createContext, useContext, useState, useEffect, ReactNode } from "react";
 
 type Language = "ro" | "en";
 
@@ -52,6 +52,13 @@ const translations = {
     availableFactions: "Factiuni Disponibile",
     howToJoin: "Cum te alături",
     howToJoinText: "Pentru a te alătura unei factiuni, contactează liderii factiunii sau aplică direct prin sistemul de factiuni din joc.",
+    slots: "Sloturi",
+    slotsAvailable: "Sloturi disponibile",
+    maxSlots: "Sloturi maxime",
+    howToApply: "Cum aplici",
+    howToApplyText: "Pentru a aplica la această factiune, contactează liderii factiunii în joc sau aplică direct prin sistemul de factiuni din User Panel.",
+    clickForDetails: "Click pentru detalii",
+    close: "Închide",
     
     // Faction categories
     policeForces: "Forțe de Poliție",
@@ -162,6 +169,23 @@ const translations = {
     levelSystemText: "Avansează în level pentru a debloca noi conținuturi și abilități. Fiecare level aduce cu sine recompense și oportunități noi în lumea Veyron.",
     howToGainXP: "Cum câștigi XP",
     levelRewards: "Recompense pe Level",
+    personalizedPayday: "Payday Personalizat",
+    personalizedPaydayDesc: "Fiecare caracter din joc primește payday-ul o dată la o oră, dar nu la ora fixă. Este un sistem de payday individual, fiecare jucător având propriul său timer.",
+    experienceSystem: "Sistemul de Experiență",
+    experienceSystemDesc: "Sistemul de nivel se bazează pe experiență, în funcție de activitățile tale din joc: muncă la joburi, misiuni, heisturi, jafuri, etc. Orice acțiune îți aduce experiență și te face să avansezi în nivel.",
+    maxLevel: "Nivel Maxim",
+    maxLevelValue: "50",
+    maxLevelDesc: "Nivelul maxim este 50. Odată ajuns la nivel maxim, îți va fi deblocat un sistem de reborn.",
+    rebornSystem: "Sistemul de Reborn",
+    rebornSystemDesc: "După ce vei ajunge la nivel maxim (50), vei putea să te reborn-ezi. Acest proces îți va permite să continui să progresezi și să deblochezi conținut suplimentar.",
+    maxLevelBadge: "Badge Nivel Maxim",
+    maxLevelBadgeDesc: "Odată ajuns la nivel maxim, îți va fi deblocat un badge special în user panel - o iconiță cu o steluță. Dacă ții cursorul peste ea, vei fi informat că ai nivel maxim.",
+    activities: "Activități care oferă XP",
+    levelJobs: "Joburi",
+    levelMissions: "Misiuni",
+    levelHeists: "Heisturi",
+    levelRobberies: "Jafuri",
+    levelOtherActivities: "Alte activități",
     
     // Loading screen
     loading: "Se încarcă...",
@@ -176,6 +200,39 @@ const translations = {
     landingDescription: "Serverul nostru este un server RPG bazat pe modificarea multiplayer RAGE Multiplayer pentru Grand Theft Auto V. Joacă ca civil, criminal sau ofițer de poliție. Există multe joburi din care poți alege și serverul este actualizat constant.",
     startPlaying: "ÎNCEPE SĂ JOCI",
     joinDiscord: "ALĂTURĂ-TE DISCORD-ULUI",
+    serverOnline: "Server Online",
+    followUs: "Follow Us",
+    saturday: "Saturday",
+    sunday: "Sunday",
+    monday: "Monday",
+    tuesday: "Tuesday",
+    wednesday: "Wednesday",
+    thursday: "Thursday",
+    friday: "Friday",
+    
+    // Statistics
+    statistics: "STATISTICI",
+    onlineUsers: "UTILIZATORI ONLINE",
+    registeredUsers: "UTILIZATORI ÎNREGISTRAȚI",
+    onlineLast24h: "ONLINE ÎN ULTIMELE 24H",
+    playersEvolution: "EVOLUȚIA JUCĂTORILOR",
+    
+    // How to Play
+    howToPlay: "CUM SĂ JOCI",
+    howToPlayDescription: "Pentru a juca pe serverul nostru, ai nevoie de o copie licențiată a Grand Theft Auto V și RAGE Multiplayer instalat pe computerul tău.",
+    step1: "PASUL 1",
+    step1Title: "Ai nevoie de o copie licențiată a Grand Theft Auto V",
+    step1Description: "O poți cumpăra de pe Steam, Rockstar Games Launcher sau Epic Games Store",
+    step2: "PASUL 2",
+    step2Title: "Descarcă și instalează RAGE Multiplayer",
+    step2Description: "Poți să-l descarci de pe RAGE Multiplayer",
+    downloadRage: "DESCARCĂ RAGE MULTIPLAYER",
+    step3: "PASUL 3",
+    step3Title: "Conectează-te la serverul nostru",
+    step3Description: "Te poți conecta la serverul nostru căutând gta.veyron.ro în lista de servere RAGE Multiplayer",
+    serverAddress: "gta.veyron.ro",
+    serverUnderDevelopment: "Server în Dezvoltare",
+    serverUnderDevelopmentDesc: "Serverul este momentan în dezvoltare. Vom anunța când va fi disponibil pentru jucători.",
   },
   en: {
     // Navigation
@@ -216,6 +273,13 @@ const translations = {
     availableFactions: "Available Factions",
     howToJoin: "How to Join",
     howToJoinText: "To join a faction, contact the faction leaders or apply directly through the in-game faction system.",
+    slots: "Slots",
+    slotsAvailable: "Available slots",
+    maxSlots: "Max slots",
+    howToApply: "How to Apply",
+    howToApplyText: "To apply to this faction, contact the faction leaders in-game or apply directly through the faction system in the User Panel.",
+    clickForDetails: "Click for details",
+    close: "Close",
     
     // Faction categories
     policeForces: "Police Forces",
@@ -326,6 +390,23 @@ const translations = {
     levelSystemText: "Advance in level to unlock new content and abilities. Each level brings with it rewards and new opportunities in the Veyron world.",
     howToGainXP: "How to Gain XP",
     levelRewards: "Level Rewards",
+    personalizedPayday: "Payday Personalizat",
+    personalizedPaydayDesc: "Fiecare caracter din joc primește payday-ul o dată la o oră, dar nu la ora fixă. Este un sistem de payday individual, fiecare jucător având propriul său timer.",
+    experienceSystem: "Sistemul de Experiență",
+    experienceSystemDesc: "Sistemul de nivel se bazează pe experiență, în funcție de activitățile tale din joc: muncă la joburi, misiuni, heisturi, jafuri, etc. Orice acțiune îți aduce experiență și te face să avansezi în nivel.",
+    maxLevel: "Nivel Maxim",
+    maxLevelValue: "50",
+    maxLevelDesc: "Nivelul maxim este 50. Odată ajuns la nivel maxim, îți va fi deblocat un sistem de reborn.",
+    rebornSystem: "Sistemul de Reborn",
+    rebornSystemDesc: "După ce vei ajunge la nivel maxim (50), vei putea să te reborn-ezi. Acest proces îți va permite să continui să progresezi și să deblochezi conținut suplimentar.",
+    maxLevelBadge: "Max Level Badge",
+    maxLevelBadgeDesc: "Once you reach max level, you will unlock a special badge in the user panel - an icon with a star. If you hover over it, you will be informed that you have max level.",
+    activities: "Activities that give XP",
+    levelJobs: "Jobs",
+    levelMissions: "Missions",
+    levelHeists: "Heists",
+    levelRobberies: "Robberies",
+    levelOtherActivities: "Other activities",
     
     // Loading screen
     loading: "Loading...",
@@ -340,11 +421,54 @@ const translations = {
     landingDescription: "Our server is a RPG server based on the multiplayer modification RAGE Multiplayer for Grand Theft Auto V. Play as a civilian, criminal or police officer. There are many jobs to choose from and the server is constantly being updated and worked on.",
     startPlaying: "START PLAYING",
     joinDiscord: "JOIN OUR DISCORD",
+    serverOnline: "Server Online",
+    followUs: "Follow Us",
+    saturday: "Saturday",
+    sunday: "Sunday",
+    monday: "Monday",
+    tuesday: "Tuesday",
+    wednesday: "Wednesday",
+    thursday: "Thursday",
+    friday: "Friday",
+    
+    // Statistics
+    statistics: "STATISTICS",
+    onlineUsers: "ONLINE USERS",
+    registeredUsers: "REGISTERED USERS",
+    onlineLast24h: "ONLINE LAST 24H",
+    playersEvolution: "PLAYERS EVOLUTION",
+    
+    // How to Play
+    howToPlay: "HOW TO PLAY",
+    howToPlayDescription: "In order to play on our server, you need to have a licensed copy of Grand Theft Auto V and RAGE Multiplayer installed on your computer.",
+    step1: "STEP 1",
+    step1Title: "You'll need a licensed copy of Grand Theft Auto V",
+    step1Description: "You can buy it from Steam, Rockstar Games Launcher or Epic Games Store",
+    step2: "STEP 2",
+    step2Title: "Download and install RAGE Multiplayer",
+    step2Description: "You can download it from RAGE Multiplayer",
+    downloadRage: "DOWNLOAD RAGE MULTIPLAYER",
+    step3: "STEP 3",
+    step3Title: "Connect to our server",
+    step3Description: "You can connect to our server by searching for gta.veyron.ro in the RAGE Multiplayer server list",
+    serverAddress: "gta.veyron.ro",
+    serverUnderDevelopment: "Server Under Development",
+    serverUnderDevelopmentDesc: "The server is currently under development. We will announce when it becomes available for players.",
   },
 };
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
   const [language, setLanguage] = useState<Language>("ro");
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+    // Poți adăuga aici logica pentru a citi limba din localStorage dacă e necesar
+    // const savedLanguage = localStorage.getItem("language") as Language | null;
+    // if (savedLanguage && (savedLanguage === "ro" || savedLanguage === "en")) {
+    //   setLanguage(savedLanguage);
+    // }
+  }, []);
 
   const t = (key: string): string => {
     return translations[language][key as keyof typeof translations.ro] || key;

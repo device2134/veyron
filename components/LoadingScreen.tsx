@@ -111,7 +111,7 @@ export default function LoadingScreen() {
           <div className="w-96 space-y-3">
             <div className="w-full bg-discord-sidebar/50 rounded-full h-2 overflow-hidden border border-discord-active/30 backdrop-blur-sm">
               <div
-                className="h-full bg-gradient-to-r from-discord-accent via-purple-500 via-pink-500 to-discord-accent rounded-full transition-all duration-300 ease-out relative overflow-hidden"
+                className="h-full bg-gradient-to-r from-discord-accent via-purple-500 to-pink-500 rounded-full transition-all duration-300 ease-out relative overflow-hidden"
                 style={{ width: `${Math.min(progress, 100)}%` }}
               >
                 <div className="absolute inset-0 bg-white opacity-30 animate-shimmer" />
